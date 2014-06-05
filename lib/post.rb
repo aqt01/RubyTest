@@ -1,4 +1,5 @@
 class Post
+
 attr_accessor :title, :text, :date, :user
 
 	def initialize(title,text, date, user) 
@@ -10,5 +11,12 @@ attr_accessor :title, :text, :date, :user
 	
 	def summary()
 		print @text.split.first(10).join(' ')
+	end
+
+	def same?(post)
+		if post.date == @date and post.text == @text and post.title == @title
+			true
+		 
+		end
 	end
 end

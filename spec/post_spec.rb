@@ -29,8 +29,17 @@ describe Post do
   end
 
   describe "#same?" do
-    it "should return true if Title, Date and Text are the same"
-    it "should return false if Title, Date and Text are not the same"
+	
+    it "should return true if Title, Date and Text are the same" do
+	same_post = Post.new 'The post', 'This is the very very real post', '04-04-2014','aqt01' 
+
+	expect(post.same?(same_post)).to eql(true)
+	
+	end
+
+    it "should return false if Title, Date and Text are not the same" do
+	end
+
   end
 
   describe "#display_entry" do
