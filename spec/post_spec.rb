@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'post'
 describe Post do
 	let(:post) {Post.new 'The post', 'This is the very very real post', '04-04-2014','aqt01' }
 
@@ -10,7 +10,9 @@ describe Post do
     end
 
     context "with proper attributes" do
-      it "should properly initialize a post instance"
+      it "should properly initialize a post instance" do
+	expect(post).to be_instance_of(Post)
+	end
     end
 
   end
