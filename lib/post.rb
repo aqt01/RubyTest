@@ -40,9 +40,6 @@ attr_accessor :title, :text, :date, :user
 		f.write YAML::dump self	
 	end
 	end
-	def attrs()
-    		instance_variables.map{|ivar| instance_variable_get ivar}
-  	end
 end
 
 
