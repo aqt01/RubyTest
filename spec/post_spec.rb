@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Post do
-  describe "#initialize" do
+	let(:post) {Post.new 'The post', 'This is the very very real post', '04-04-2014','aqt01' }
 
+  describe "#initialize" do
+	
     context "with a yaml file" do
       it "should properly load a post from a yaml file"
     end
@@ -13,7 +15,10 @@ describe Post do
 
   end
   describe "#summary" do
-    it "should display the first 10 words of text"
+    it "should display the first 10 words of text" do
+	expect(post.text.split.first(10).join('')).to be_kind_of(String)
+    end
+
   end
 
   describe "#tagme" do
