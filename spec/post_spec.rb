@@ -38,6 +38,11 @@ describe Post do
 	end
 
     it "should return false if Title, Date and Text are not the same" do
+
+	not_same_post = Post.new 'A post', 'This is the very real post', '04-04-2012','aqt02' 
+
+	expect(post.same?(not_same_post)).to eql(false)
+
 	end
 
   end

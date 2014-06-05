@@ -16,6 +16,9 @@ attr_accessor :title, :text, :date, :user
 	def same?(post)
 		if post.date == @date and post.text == @text and post.title == @title
 			true
+		else
+			false
+
 		 
 		end
 	end
