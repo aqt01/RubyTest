@@ -2,7 +2,7 @@ require 'yaml'
 class Post
 attr_accessor :title, :text, :date, :user
 
-	def initialize(title=nil,text=nil, date=nil, user=nil, filename=nil) 
+	def initialize(title=nil,text=nil, date=nil, user=nil,tag_name=nil, filename=nil) 
 
 		if filename == nil		
 			@title = title
@@ -22,6 +22,10 @@ attr_accessor :title, :text, :date, :user
 	
 	def summary()
 		print @text.split.first(10).join(' ')
+	end
+
+	def tag_me(N)
+		
 	end
 
 	def same?(post)
