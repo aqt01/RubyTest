@@ -16,6 +16,29 @@ describe Post do
     end
 
   end
+
+  describe "#title" do
+	it 'is a string' do
+		expect(post.title).to be_kind_of(String)
+	end
+end
+  describe "#text" do
+	it 'is a string' do
+		expect(post.text).to be_kind_of(String)
+	end
+end
+
+  describe "#date" do
+	it 'is a string' do
+		expect(post.date).to be_kind_of(String) 
+	end
+end
+  describe "#user" do
+	it 'is a string' do
+		expect(post.user).to be_kind_of(String)
+	end
+end
+
   describe "#summary" do
     it "should display the first 10 words of text" do
 	expect(post.text.split.first(10).join('')).to be_kind_of(String)
