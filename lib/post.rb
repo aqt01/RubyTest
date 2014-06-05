@@ -1,13 +1,24 @@
+require 'yaml'
 class Post
-
 attr_accessor :title, :text, :date, :user
 
-	def initialize(title,text, date, user) 
-		@title = title
-		@text = text
-		@date = date
-		@user = user
+	def initialize(title=nil,text=nil, date=nil, user=nil, filename=nil) 
+
+		if filename == nil		
+			@title = title
+			@text = text
+			@date = date
+			@user = user
+		else
+			saved_post = Post.new filename
+			@title = saved_post.title
+			@text = saved_post.text 
+			@date = saved_post.date
+			@user = saved_post.user
+		end
+	
 	end
+	
 	
 	def summary()
 		print @text.split.first(10).join(' ')
@@ -22,4 +33,16 @@ attr_accessor :title, :text, :date, :user
 		 
 		end
 	end
+	def save()
+	filename = @title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+	filename = filename + '.yml'
+	File.open filename, 'w' do |f|
+		f.write YAML::dump self	
+	end
+	end
+	def attrs()
+    		instance_variables.map{|ivar| instance_variable_get ivar}
+  	end
 end
+
+
